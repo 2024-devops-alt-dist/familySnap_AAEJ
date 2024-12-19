@@ -18,8 +18,13 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
+    <style>
+      body {
+        background-color: grey;
+      }
+    </style>
   </head>
-  <body style="background-color: grey">
+  <body>
     <h1>Welcome to my website!</h1>
     <video id="webcamVideo" autoplay></video>
     <div class="buttons">
@@ -37,8 +42,8 @@
     </div>
     <div id="qrcode"></div>
 
-    <script type="module" src="/app/js/camera.js"></script>
-    <script type="module" src="/app/js/event.js"></script>
-    <script type="module" src="/app/js/firebase-config.js"></script>
+    <script type="module" src="camera.js"></script>
+    <script type="module" src="event.js"></script>
+    <script type="module" src="firebase-config.js"></script>
   </body>
 </html>
