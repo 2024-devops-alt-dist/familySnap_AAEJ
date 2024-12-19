@@ -1,0 +1,14 @@
+
+.scan-btn{
+    display: block;
+    width: 12rem;
+    border: none;
+    padding: 0.9375rem 1.875rem;
+    font-size: 1em;
+    border-radius: var(--default-border-radius);
+    cursor: pointer;
+    text-decoration: none;
+    }
+
+                
+ 
