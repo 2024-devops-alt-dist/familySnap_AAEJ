@@ -33,11 +33,10 @@ async function createEvent() {
     });
     console.log(`Document with ID: ${eventRef.id} added.`);
     alert("Event created successfully!");
-    const eventLink = document.createElement("a");
-    eventLink.href = `/my-event.html?id=${eventRef.id}`;
-    eventLink.target = "_blank";
-    eventLink.textContent = "Go to event";
-    document.body.appendChild(eventLink);
+    new QRCode(
+      document.getElementById("event-qr-code"),
+      `/my-event.html?id=${eventRef.id}`
+    );
   } catch (error) {
     console.error("Error adding event: ", error);
     alert("Error creating event!");

@@ -9,6 +9,12 @@
       content="FamilySnap is an event photos sharing app"
     />
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"
+      integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
 
     <!-- styles -->
     <link rel="stylesheet" href="../../assets/css/reset.css" />
@@ -77,15 +83,15 @@
 
       <section class="container-code">
         <div class="container-event-code">
-            <h2>Event Code</h2>
-            <div id="event-code"></div>
+          <h2>Event Code</h2>
+          <div id="event-code"></div>
         </div>
 
         <div class="container-qr-code">
-            <h2>Qr Code</h2>
-            <div id="event-qr-code"></div>
+          <h2>Qr Code</h2>
+          <div id="event-qr-code"></div>
         </div>
-    </section>
+      </section>
     </form>
     <script type="module" src="../../app/js/firebase-config.js"></script>
     <script type="module" src="../../app/js/create-event.js"></script>
