@@ -1,0 +1,26 @@
+#create-event-page {
+    width: 100vw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .create-event-form {
+        width: 50%;
+        min-width: 31.25rem;
+    
+        .container-form-input {
+            font-family: var(--default-font);
+            font-size: var(--default-font-size);
+
+            input, textarea {
+                display: inline-block;
+                margin-top: 0.25rem;
+                outline: none;
+                border-radius: var(--default-border-radius);
+                border: 0.125rem solid var(--third-color);
+                padding: 0.25rem;
+            }
+        }
+    }
+}

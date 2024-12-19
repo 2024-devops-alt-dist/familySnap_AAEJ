@@ -1,0 +1,35 @@
+/********************* GLOBALS VAR *************************/
+:root{
+    --main-color: #0072CA;
+    --snd-color: #CEE2F2;
+    --third-color: #E0E2E6;
+    --white-color: #f1f1f1;
+    --black-color: #0a0a0a;
+
+    --default-font-size: 1rem;
+    --default-font: Arial;
+    --default-font-weight: 300;
+    --light-font-weight: 200;
+
+    --default-border-radius: 0.25rem;
+}
+
+
+/********************* STANDARD BUTTON COMPONENTS *************************/
+.std-button {
+    width: var(--_button-width, 6.25rem);
+    font-family: var(--default-font);
+    background-color: var(--_button-color, --main-color);
+}
+
+
+/********************* STANDARD FORM COMPONENTS *************************/
+
+.container-form-input {
+    width: 18.75rem;
+    height: auto;
+    padding: 1.5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
