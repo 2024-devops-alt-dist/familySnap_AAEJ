@@ -48,6 +48,12 @@
             cursor: pointer;
             text-decoration: none;
         }
+
+        .btn-secondary{
+            background-color: var(--third-color);
+            color: var(--black-color);
+            margin-top: 1rem;
+        }
         
         .button:hover {
             background-color: var(--main-color);

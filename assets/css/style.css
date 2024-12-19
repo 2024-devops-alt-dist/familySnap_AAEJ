@@ -24,10 +24,13 @@
 /********************* STANDARD BUTTON COMPONENTS *************************/
 .std-button {
     width: var(--_button-width, 6.25rem);
+    height: var(--_button-height, 1.75rem);
     font-family: var(--default-font);
     background-color: var(--main-color);
     color: var(--white-color);
+    text-align: center;
 }
+
 
 
 /********************* STANDARD FORM COMPONENTS *************************/
@@ -36,6 +39,7 @@
     width: 18.75rem;
     height: auto;
     padding: 1.5%;
+    margin-bottom: 1.25rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -70,6 +74,7 @@
 
 h1 {
     font-size: var(--font-size-h1);
+    margin: 2.25rem;
 }
 
 h2 {
