@@ -11,14 +11,24 @@ const createEventButton = document.getElementById("createEventButton");
 async function createEvent() {
   event.preventDefault();
   const eventName = document.getElementById("event-title").value.trim();
-  alert("click");
+  const eventDescription = document.getElementById("event-desc").value.trim();
+  const eventDate = document.getElementById("event-date").value.trim();
   if (!eventName) {
     alert("what is the name of your event ?");
+    return;
+  } else if (!eventDescription) {
+    alert("what is the description of your event ?");
+    return;
+  } else if (!eventDate) {
+    alert("what is the date of your event ?");
     return;
   }
   try {
     const eventRef = await addDoc(collection(firestore, "events"), {
       name: eventName,
+      description: eventDescription,
+      date: eventDate,
+
       timestamp: new Date(),
     });
     console.log(`Document with ID: ${eventRef.id} added.`);
