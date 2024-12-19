@@ -12,6 +12,9 @@
     --light-font-weight: 200;
 
     --default-border-radius: 0.25rem;
+    --font-size-h1: 1.8rem;
+    --font-size-h2: 1.4rem;
+    --font-size-h3: 1.2rem;
 }
 
 
@@ -19,7 +22,8 @@
 .std-button {
     width: var(--_button-width, 6.25rem);
     font-family: var(--default-font);
-    background-color: var(--_button-color, --main-color);
+    background-color: var(--main-color);
+    color: var(--white-color);
 }
 
 
@@ -33,3 +37,29 @@
     flex-direction: column;
     justify-content: center;
 }
+
+/********************* FONTS *************************/
+*{
+    font-weight: var(--default-font-weight);
+    font-family: var(--default-font);
+
+}
+
+h1 {
+    font-size: var(--font-size-h1);
+}
+
+h2 {
+    font-size: var(--font-size-h2);
+}
+
+h3 {
+    font-size: var(--font-size-h3);
+}
+
+p {
+    font-size: var(--default-font-size);
+}
+
+
+

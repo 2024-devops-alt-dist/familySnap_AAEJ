@@ -55,12 +55,20 @@
             </div>
         </section>
 
-        <footer class="container-action-button-create-event-form">
-            <button type="submit">Submit</button>
-            <div class="container-toggle-permissions">
-                <div class="toggle-allow-download">Allow Download</div>
-                <div class="toggle-allow-sharing">Allow Sharing</div>
+        <section class="container-toggle-permissions">
+            <div class="container-toggle-download">
+                <input type="checkbox" id="download" name="download" class="toggle-allow-download" />    
+                <label for="download">Allow Download</label>
             </div>
+            <div class="container-toggle-sharing">
+                <input type="checkbox" id="sharing" name="sharing" class="toggle-allow-sharing"/>
+                <label for="sharing">Allow Sharing</label>
+            </div>
+
+        </section>
+        <footer class="container-action-button-create-event-form">
+            
+            <button type="submit" class="std-button submit-btn">Submit</button>
         </footer>
     </form>
 
