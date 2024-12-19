@@ -9,7 +9,9 @@ import {
 const createEventButton = document.getElementById("createEventButton");
 
 async function createEvent() {
+  event.preventDefault();
   const eventName = document.getElementById("event-title").value.trim();
+  alert("click");
   if (!eventName) {
     alert("what is the name of your event ?");
     return;
@@ -21,6 +23,11 @@ async function createEvent() {
     });
     console.log(`Document with ID: ${eventRef.id} added.`);
     alert("Event created successfully!");
+    const eventLink = document.createElement("a");
+    eventLink.href = `/event/${eventRef.id}`;
+    eventLink.target = "_blank";
+    eventLink.textContent = "Go to event";
+    document.body.appendChild(eventLink);
   } catch (error) {
     console.error("Error adding event: ", error);
     alert("Error creating event!");
@@ -28,9 +35,3 @@ async function createEvent() {
 }
 
 createEventButton.addEventListener("click", createEvent);
-
-const eventLink = document.createElement("a");
-eventLink.href = `/event/${eventRef.id}`;
-eventLink.target = "_blank";
-eventLink.textContent = "Go to event";
-document.body.appendChild(eventLink);
