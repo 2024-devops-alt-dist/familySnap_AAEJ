@@ -1,77 +1,91 @@
 <html>
-
-<head>
+  <head>
     <title>FamilySnap - Create Event</title>
 
     <!--METAs-->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="FamilySnap is an event photos sharing app" />
-    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta
+      name="description"
+      content="FamilySnap is an event photos sharing app"
+    />
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
 
     <!-- styles -->
-    <link rel="stylesheet" href="../../assets/css/reset.css">
-    <link rel="stylesheet" href="../../assets/css/style.css">
-    <link rel="stylesheet" href="../../assets/css/create-event-style.css">
-</head>
+    <link rel="stylesheet" href="../../assets/css/reset.css" />
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <link rel="stylesheet" href="../../assets/css/create-event-style.css" />
+  </head>
 
-
-<body id="create-event-page">
+  <body id="create-event-page">
     <h1 id="create-event-title">Family Photo Events</h1>
-    
+
     <form action="" class="create-event-form">
-        <div class="container-form-input">
-            <label for="event-title">Event Title</label>
-            <input
-                type="text"
-                name="event-title"
-                id="event-title"
-                placeholder="Enter your event title here"
-            />
+      <div class="container-form-input">
+        <label for="event-title">Event Title</label>
+        <input
+          type="text"
+          name="event-title"
+          id="event-title"
+          placeholder="Enter your event title here"
+        />
+      </div>
+
+      <div class="container-form-input">
+        <label for="event-desc">Event Description</label>
+        <textarea
+          name="event-desc"
+          id="event-desc"
+          placeholder="Describe your event"
+        ></textarea>
+      </div>
+
+      <div class="container-form-input">
+        <label for="event-date">Event Date</label>
+        <input type="date" name="event-date" id="event-date" />
+      </div>
+
+      <section class="container-code">
+        <div class="container-event-code">
+          <h2>Event Code</h2>
+          <div id="event-code"></div>
         </div>
 
-        <div class="container-form-input">
-            <label for="event-desc">Event Description</label>
-            <textarea
-                name="event-desc"
-                id="event-desc"
-                placeholder="Describe your event"
-            ></textarea>
+        <div class="container-qr-code">
+          <h2>Qr Code</h2>
+          <div id="event-qr-code"></div>
         </div>
+      </section>
 
-        <div class="container-form-input">
-            <label for="event-date">Event Date</label>
-            <input type="date" name="event-date" id="event-date">
+      <section class="container-toggle-permissions">
+        <div class="container-toggle-download">
+          <input
+            type="checkbox"
+            id="download"
+            name="download"
+            class="toggle-allow-download"
+          />
+          <label for="download">Allow Download</label>
         </div>
-        
-        <section class="container-code">
-            <div class="container-event-code">
-                <h2>Event Code</h2>
-                <div id="event-code"></div>
-            </div>
-    
-            <div class="container-qr-code">
-                <h2>Qr Code</h2>
-                <div id="event-qr-code"></div>
-            </div>
-        </section>
-
-        <section class="container-toggle-permissions">
-            <div class="container-toggle-download">
-                <input type="checkbox" id="download" name="download" class="toggle-allow-download" />    
-                <label for="download">Allow Download</label>
-            </div>
-            <div class="container-toggle-sharing">
-                <input type="checkbox" id="sharing" name="sharing" class="toggle-allow-sharing"/>
-                <label for="sharing">Allow Sharing</label>
-            </div>
-
-        </section>
-        <footer class="container-action-button-create-event-form">
-            
-            <button type="submit" class="std-button submit-btn">Submit</button>
-        </footer>
+        <div class="container-toggle-sharing">
+          <input
+            type="checkbox"
+            id="sharing"
+            name="sharing"
+            class="toggle-allow-sharing"
+          />
+          <label for="sharing">Allow Sharing</label>
+        </div>
+      </section>
+      <footer class="container-action-button-create-event-form">
+        <button
+          type="submit"
+          id="createEventButton"
+          class="std-button submit-btn"
+        >
+          Submit
+        </button>
+      </footer>
     </form>
-
-</body>
-
+    <script type="module" src="../js/create-event.js"></script>
+  </body>
 </html>
