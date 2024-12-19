@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      type="module"
+      src="https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js"
+    ></script>
+    <script
+      type="module"
+      src="https://www.gstatic.com/firebasejs/11.1.0/firebase-storage.js"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"
+      integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+  <body style="background-color: grey">
+    <h1>Welcome to my website!</h1>
+    <video id="webcamVideo" autoplay></video>
+    <div class="buttons">
+      <button id="takePhotoButton">Take Photo</button>
+      <button id="downloadPhotoButton">Download Photo</button>
+      <!-- photoCanvas = emplacement de la photo que l'on vient de prendre -->
+      <canvas id="photoCanvas"></canvas>
+    </div>
+    <!-- photoGallery = container de la gallerie ; NB : le bouton supprimer est créé en JS class delete-button -->
+    <div id="photoGallery" class="gallery"></div>
+    <div>
+      <label for="eventName">Event Name:</label>
+      <input type="text" id="eventName" />
+      <button id="createEventButton">Create Event</button>
+    </div>
+    <div id="qrcode"></div>
+
+    <script type="module" src="/app/js/camera.js"></script>
+    <script type="module" src="/app/js/event.js"></script>
+    <script type="module" src="/app/js/firebase-config.js"></script>
+  </body>
+</html>
