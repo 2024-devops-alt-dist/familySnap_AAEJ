@@ -6,6 +6,8 @@ import {
   getDocs,
   deleteDoc,
   doc,
+  query,
+  where,
 } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-firestore.js";
 //storage
 import {
@@ -15,6 +17,14 @@ import {
 } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-storage.js";
 
 console.log("hello from camera.js");
+
+function urlParams() {
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  const eventId = urlParams.get("id");
+  console.log("eventId : ", eventId);
+  return eventId;
+}
 
 const webcamVideo = document.getElementById("webcamVideo");
 const takePhotoButton = document.getElementById("takePhotoButton");
@@ -30,10 +40,11 @@ navigator.mediaDevices
     webcamVideo.srcObject = stream;
     webcamVideo.play();
   })
-  .catch((err) => {
-    console.log("Error: " + err);
+  .catch((error) => {
+    console.log("Error: " + error);
   });
 
+//"DESSINER" LA PHOTO ET L'UPLOAD
 function takePhoto() {
   if (webcamVideo && webcamVideo.srcObject && webcamVideo.srcObject.active) {
     const resizedWidth = 192; // regle de 3 !
@@ -53,8 +64,9 @@ function takePhoto() {
       0,
       0,
       resizedWidth,
-      resizedHeight // Destination : dimensions redimensionnées
-    );
+      resizedHeight
+    ); // Destination : dimensions redimensionnées
+
     console.log("picture in the box !");
 
     // Convertir le canvas en base 64
@@ -65,6 +77,9 @@ function takePhoto() {
     const photoName = `photo_${Date.now()}.jpg`; //manière la + simple pour avoir un nom unique
     //ref de l'import et stotage voir firebase-config.js
     const photoRef = ref(storage, `familySnap/${photoName}`);
+
+    const eventId = urlParams();
+    console.log("eventId : ", eventId);
 
     // Upload de l'image et récupération de l'URL
     // uploadString = uploader l image en base64 (data_url est le format de l'image -base64-)
@@ -77,6 +92,7 @@ function takePhoto() {
         // Ajouter les datas et surtout l url à Firestore
         return addDoc(collection(firestore, "photoFamilySnap"), {
           name: photoName,
+          eventId: eventId,
           url: url,
           timestamp: new Date(),
         });
@@ -112,11 +128,16 @@ downloadPhotoButton.addEventListener("click", downloadPhoto);
 async function loadGallery() {
   const photoGallery = document.getElementById("photoGallery");
   photoGallery.innerHTML = "";
+  const eventId = urlParams();
 
   try {
-    const querySnapshot = await getDocs(
-      collection(firestore, "photoFamilySnap")
+    // recuperer uniquement les photos associées à l'eventId avec query de firebase  et where
+    const photoQuery = query(
+      collection(firestore, "photoFamilySnap"),
+      where("eventId", "==", eventId)
     );
+
+    const querySnapshot = await getDocs(photoQuery);
 
     querySnapshot.forEach((doc) => {
       const photoData = doc.data();

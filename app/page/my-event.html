@@ -25,8 +25,16 @@
     </style>
   </head>
   <body>
-    <h1>Welcome to your event!</h1>
-
+    <h1 id="title"></h1>
+    <video id="webcamVideo" autoplay></video>
+    <div class="buttons">
+      <button id="takePhotoButton">Take Photo</button>
+      <button id="downloadPhotoButton">Download Photo</button>
+      <!-- photoCanvas = emplacement de la photo que l'on vient de prendre -->
+      <canvas id="photoCanvas"></canvas>
+    </div>
+    <!-- photoGallery = container de la gallerie ; NB : le bouton supprimer est créé en JS class delete-button -->
+    <div id="photoGallery" class="gallery"></div>
     <script type="module" src="../../app/js/firebase-config.js"></script>
     <script type="module" src="../../app/js/camera.js"></script>
     <script type="module" src="../../app/js/my-event.js"></script>
