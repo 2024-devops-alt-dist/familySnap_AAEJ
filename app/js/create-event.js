@@ -34,7 +34,7 @@ async function createEvent() {
     console.log(`Document with ID: ${eventRef.id} added.`);
     alert("Event created successfully!");
     const eventLink = document.createElement("a");
-    eventLink.href = `/event/${eventRef.id}`;
+    eventLink.href = `/my-event.html?id=${eventRef.id}`;
     eventLink.target = "_blank";
     eventLink.textContent = "Go to event";
     document.body.appendChild(eventLink);
