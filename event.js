@@ -22,9 +22,11 @@ async function createEvent() {
       timestamp: new Date(),
     });
 
-    console.log(
-      "eventRef: " + eventRef.id + " eventName: " + eventName + eventRef
-    );
+    console.log("eventRef: " + eventRef.id + " eventName: " + eventName);
+    const eventLink = document.createElement("a");
+    eventLink.href = `event.html?eventRef=${eventRef.id}`;
+    eventLink.innerText = `Go to event '${eventName}'`;
+    document.body.appendChild(eventLink);
 
     alert(`Event '${eventName}' created successfully.`);
   } catch (error) {
