@@ -110,6 +110,9 @@ p {
         background-position: center;
         background-size: contain;
         background-repeat: no-repeat;
+        height: 90%;
+        width: 100%;
+        position: relative;
     }
 
     .header-card {
@@ -118,11 +121,6 @@ p {
         display: flex;
         justify-content: left;
         align-items: end;
-    }
-
-    .main-image {
-        height: 90%;
-        width: 100%;
     }
 }
 
