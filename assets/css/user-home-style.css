@@ -1,5 +1,15 @@
 #user-home {
     width: 100vw;
+    padding: 0 5%;
+    display: grid;
+    grid-template-rows: 20% 60% 20%;
+    grid-template-columns: 1fr;
+    justify-items: center;
 
-    
+    .user-home-feed {
+        width: 100%;
+        max-width: 20rem;
+        height: fit-content;
+        padding-bottom: 5rem;
+    }
 }
