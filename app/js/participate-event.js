@@ -21,9 +21,11 @@ domReady(function () {
       lastResult = decodeText;
       countResults++;
       lastResult = decodeResult;
-      alert("qr code is: " + decodeText, decodeResult);
+      alert("your event : " + decodeText, decodeResult);
       //qr.innerHTML = `<div>${decodeText}</div>`;
       qr.textContent = `you scan ${countResults} : ${decodeText}`;
+      const eventPageUrl = decodeText;
+      window.location.href = eventPageUrl;
     }
   }
 
