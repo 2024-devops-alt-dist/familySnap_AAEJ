@@ -18,6 +18,9 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
+    <!-- styles -->
+    <link rel="stylesheet" href="../../assets/css/my-event.css" />
+    ²
     <style>
       body {
         background-color: grey;
@@ -26,17 +29,41 @@
   </head>
   <body>
     <h1 id="title"></h1>
-    <video id="webcamVideo" autoplay></video>
-    <div class="buttons">
-      <button id="takePhotoButton">Take Photo</button>
-      <button id="downloadPhotoButton">Download Photo</button>
-      <!-- photoCanvas = emplacement de la photo que l'on vient de prendre -->
-      <canvas id="photoCanvas"></canvas>
+    <!-- Galerie et bouton pour ouvrir la caméra -->
+    <div class="pictures-container">
+      <button id="openModalButton">Open Camera</button>
+      <!-- Nouveau bouton pour ouvrir la modale -->
+      <div id="photoGallery" class="gallery"></div>
     </div>
+
+    <!-- Modale pour la caméra -->
+    <div id="cameraModal" class="modal">
+      <div class="modal-content">
+        <button class="close" id="closeModalButton">X</button>
+        <video id="webcamVideo" autoplay></video>
+        <div class="buttons">
+          <button id="takePhotoButton">Take Photo</button>
+          <button id="downloadPhotoButton">Download Photo</button>
+          <!-- photoCanvas = emplacement de la photo que l'on vient de prendre -->
+          <canvas id="photoCanvas"></canvas>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="pictures-container">
+      <video id="webcamVideo" autoplay></video>
+      <div class="buttons">
+        <button id="takePhotoButton">Take Photo</button>
+        <button id="downloadPhotoButton">Download Photo</button> -->
+    <!-- photoCanvas = emplacement de la photo que l'on vient de prendre -->
+    <!-- <canvas id="photoCanvas"></canvas>
+      </div> -->
+
     <!-- photoGallery = container de la gallerie ; NB : le bouton supprimer est créé en JS class delete-button -->
-    <div id="photoGallery" class="gallery"></div>
+    <!-- <div id="photoGallery" class="gallery"></div>
+    </div> -->
     <script type="module" src="../../app/js/firebase-config.js"></script>
-    <script type="module" src="../../app/js/camera.js"></script>
+    <!-- <script type="module" src="../../app/js/camera.js"></script> -->
     <script type="module" src="../../app/js/my-event.js"></script>
+    <script type="module" src="../../app/js/photo-gallery.js"></script>
   </body>
 </html>
