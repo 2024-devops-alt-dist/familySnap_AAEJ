@@ -113,14 +113,15 @@ p {
     }
 
     .header-card {
-        width: 100%;
+        width: 95%;
+        max-height: 28px;
         display: flex;
         justify-content: left;
         align-items: end;
     }
 
     .main-image {
-        height: 87.5%;
+        height: 90%;
         width: 100%;
     }
 }

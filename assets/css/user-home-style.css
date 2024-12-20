@@ -45,3 +45,50 @@ header h1 {
     margin: 0;
     text-align: center;
 }
+
+
+
+
+/********************* HEADER CARD **************************/
+.header-card {
+    display: flex;
+    align-items: center;
+    width: 20%;
+    padding: 10px;
+    background-color: var(--snd-color);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+}
+
+.user-profile-picture {
+    width: 30px;
+    height: 30px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+    margin-right: 16px;
+}
+
+.event-infos {
+    flex: 1;
+}
+
+.event-title {
+    font-size: 12px;
+    font-weight: bold;
+    margin: 0;
+    color: #333;
+}
+.event-location {
+    font-size: 10px;
+    color: #666;
+    margin: 4px 0 0;
+}
+
+.header-card > p {
+    font-size: 12px;
+    color: #999;
+    margin: 0;
+}
