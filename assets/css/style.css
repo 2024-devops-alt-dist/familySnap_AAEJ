@@ -1,4 +1,5 @@
 /********************* GLOBALS VAR *************************/
+
 :root{
     --main-color: #0072CA;
     --snd-color: #CEE2F2;
@@ -6,28 +7,30 @@
     --white-color: #f1f1f1;
     --black-color: #0a0a0a;
 
-    --default-font-size: 1rem;
+    --default-font-size: 16px;
     --default-font: Arial;
     --default-font-weight: 300;
     --light-font-weight: 200;
+
+    --font-size-h1: 1.8rem;
+    --font-size-h2: 1.4rem;
+    --font-size-h3: 1.2rem;
 
     --default-border-radius: 0.25rem;
     --default-toggle-width: 0.9rem;
     --default-toggle-height: 0.3rem;
     --default-toggle-point-width: 0.3rem;
-    --font-size-h1: 1.8rem;
-    --font-size-h2: 1.4rem;
-    --font-size-h3: 1.2rem;
 }
 
 
 /********************* STANDARD BUTTON COMPONENTS *************************/
+
 .std-button {
     width: var(--_button-width, 6.25rem);
     height: var(--_button-height, 1.75rem);
     font-family: var(--default-font);
-    background-color: var(--main-color);
-    color: var(--white-color);
+    background-color: var(--_button-bg-color, --main-color);
+    color: var(--_button-color, --white-color);
     text-align: center;
 }
 
@@ -52,24 +55,26 @@
     width: var(--_toggle-width,1.5rem);
     height: var(--_toggle-height,0.7rem);
     background-color: blueviolet;
+    
+    &::after {
+        top: 0;
+        left: 0;
+        z-index: 100;
+        position:absolute;
+        background-color: #0072CA;
+        content: '';
+        display: block;
+        width: var(--_toggle-width,0.6rem);
+        height: var(--_toggle-width,0.6rem);
+        border-radius: 50%;
+    }
 }
-.std-toggle::after {
-    top: 0;
-    left: 0;
-    z-index: 100;
-    position:absolute;
-    background-color: #0072CA;
-    content: '';
-    display: block;
-    width: var(--_toggle-width,0.6rem);
-    height: var(--_toggle-width,0.6rem);
-    border-radius: 50%;
-}
+
 /********************* FONTS *************************/
-*{
+
+* {
     font-weight: var(--default-font-weight);
     font-family: var(--default-font);
-
 }
 
 h1 {
@@ -89,5 +94,33 @@ p {
     font-size: var(--default-font-size);
 }
 
+/********************* CARD **************************/
 
+.container-card-image {
+    width: 90%;
+    max-width: 18.75rem;
+    height: 37.5rem;
+    padding: 0 .125rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 
+    img {
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .header-card {
+        width: 100%;
+        display: flex;
+        justify-content: left;
+        align-items: end;
+    }
+
+    .main-image {
+        height: 70%;
+        width: 100%;
+    }
+}
