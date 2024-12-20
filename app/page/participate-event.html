@@ -17,6 +17,7 @@
       rel="stylesheet"
       href="../../assets/css/participate-event-style.css"
     />
+    <script src="https://unpkg.com/html5-qrcode"></script>
   </head>
 
   <body id="participate-event-page">
@@ -31,8 +32,16 @@
           name="event-code-input"
           placeholder="Enter code here"
         />
-        <button class="std-button scan-btn">Scan QR code</button>
+        <button class="std-button scan-btn" id="scanQRCodeButton">
+          Scan QR code
+        </button>
       </form>
+      <div class="qr-result">
+        <div style="display: flex; justify-content: center">
+          <div id="qr-reader" style="width: 500px"></div>
+        </div>
+        <video id="qr-video" width="100" height="100"></video>
+      </div>
 
       <h2>Your events</h2>
       <h3>Christmas 2024</h3>
