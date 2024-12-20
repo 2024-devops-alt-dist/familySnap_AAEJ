@@ -33,10 +33,17 @@ async function createEvent() {
     });
     console.log(`Document with ID: ${eventRef.id} added.`);
     alert("Event created successfully!");
+
+    const qrContainer = document.getElementById("event-qr-code");
+    const codeContainer = document.getElementById("event-code");
+
+    qrContainer.innerHTML = "";
+    codeContainer.innerHTML = "";
+
     const eventLink = document.createElement("a");
     eventLink.href = `./my-event.html?id=${eventRef.id}`;
     eventLink.target = "_blank";
-    eventLink.textContent = "Go to event";
+    eventLink.textContent = `Your event : ${eventName}`;
     document.body.appendChild(eventLink);
     new QRCode(document.getElementById("event-qr-code"), {
       text: `/my-event.html?id=${eventRef.id}`,

@@ -1,4 +1,4 @@
-#participate-event-page{
+#participate-event-page {
     padding: 1rem;
     display: flex;
     flex-direction: column;
@@ -16,19 +16,19 @@ input {
     height: 3rem;
 }
 
-.join-event-form{
+.join-event-form {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.join-event-form > * {
+.join-event-form>* {
     margin-top: 1rem;
     width: 100%;
 }
 
-.scan-btn{
+.scan-btn {
     display: block;
    
     border: none;
@@ -44,8 +44,8 @@ input {
 h2 {
     margin-top: 2rem;
 }
-                
- 
+
+
 footer {
     display: flex;
     justify-content: space-around;
