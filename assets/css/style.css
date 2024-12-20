@@ -97,7 +97,7 @@ p {
 /********************* CARD **************************/
 
 .container-card-image {
-    width: 90%;
+    width: 100%;
     max-width: 18.75rem;
     height: 37.5rem;
     padding: 0 .125rem;
