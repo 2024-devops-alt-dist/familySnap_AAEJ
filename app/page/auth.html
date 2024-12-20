@@ -4,26 +4,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- styles -->
+     <link rel="stylesheet" href="../../assets/css/reset.css" />
+     <link rel="stylesheet" href="../../assets/css/style.css" />
+     <link
+       rel="stylesheet"
+       href="../../assets/css/auth-style.css"
+     />
     <title>Authentication is Fun</title>
-    <style>
-        body {text-align: center; background-color: rgb(246, 246, 246); color: black;}
-    </style>
+    
 </head>
-<body>
+<body id="auth-body">
     <div id="authForm">
-        <h2>Sign Up or Sign In</h2>
+        <h2>Sign Up or Log In</h2>
         
             <input type="email" placeholder="email" id="userEmail">
-            <input type="password" placeholder="password" id="userPassword">  <br><br>
-            <button id="signUpButton">Sign Up</button>
-            <button id="signInButton">Sign In</button>
+            <input type="password" placeholder="password" id="userPassword">  
+            <button id="signUpButton" class="std-button auth-button sign-up-button">Sign Up</button>
+            <button id="signInButton"  class="std-button auth-button log-in-button">Log In</button>
         
     </div>
 
     <div id="secretContent">
-        <h3>This is top secret information that you can only see if</h3>
-        <h1>AUTHENTICATED</h1>
-        <button id="signOutButton">Sign Out</button>
+        <h2>You can now access our app !</h2>
+        <a href="/app/page/user-home.html">Access main page</a>
+        <h3>Want to log out ? </h3>
+        <button id="signOutButton"  class="std-button auth-button log-in-button">Log Out</button>
     </div>
 
     <script type="module">
@@ -100,10 +106,10 @@
             onAuthStateChanged(auth, user => {
                 if(user) {
                     authForm.style.display = 'none';
-                    secretContent.style.display = 'block';
+                    secretContent.style.display = 'flex';
                 }
                 else {
-                    authForm.style.display = 'block';
+                    authForm.style.display = 'flex';
                     secretContent.style.display = 'none';
                 }
             })
